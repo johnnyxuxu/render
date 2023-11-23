@@ -1,10 +1,9 @@
-FROM ubuntu:22.04
+FROM debian:latest
 
-RUN apt-get update && \
-    apt-get install -y shellinabox && \
-    apt-get clean && \
-    rm -f /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+RUN apt update && \
+    apt install -y shellinabox && \
+    apt clean
+    
 RUN echo 'root:q1w2e3r4' | chpasswd
 
 EXPOSE 22
